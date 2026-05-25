@@ -228,7 +228,7 @@ export default function App() {
                         <div className="p-6 flex-1 flex flex-col items-center justify-center min-h-[400px]">
                             {svgData && (
                                 <div 
-                                    className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 mb-8"
+                                    className="w-[300px] h-[300px] bg-white p-4 rounded-lg shadow-sm border border-gray-100 mb-8 flex items-center justify-center"
                                     dangerouslySetInnerHTML={{ __html: svgData.svg }}
                                 />
                             )}
@@ -237,7 +237,7 @@ export default function App() {
                                     <label className="block text-xs font-medium text-gray-700 mb-1">Payload Data</label>
                                     <textarea 
                                         className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                        rows={3}
+                                        rows={2}
                                         value={payload}
                                         maxLength={85}
                                         onChange={(e) => setPayload(e.target.value)}
