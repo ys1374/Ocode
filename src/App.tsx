@@ -324,38 +324,6 @@ export default function App() {
                     </div>
                 </main>
 
-                <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mt-8">
-                    <div className="px-6 py-4 border-b border-gray-100 bg-gray-50">
-                        <h2 className="font-semibold text-gray-800">How It Works (LaTeX)</h2>
-                    </div>
-                    <div className="p-6">
-                        <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed">
-{`\\documentclass{article}
-\\usepackage{amsmath}
-
-\\begin{document}
-
-\\section*{Ocode Error Correction Algorithm}
-
-Ocode relies on systematic block coding over Galois Field $GF(2^8)$. Let the message polynomial of length $k$ be:
-$$ M(x) = m_{k-1}x^{k-1} + m_{k-2}x^{k-2} + \\dots + m_0 $$
-
-We compute the generator polynomial $g(x)$ of degree $2t$ (where $t$ is the error capacity):
-$$ g(x) = \\prod_{i=1}^{2t} (x - \\alpha^i) $$
-
-The transmission polynomial $T(x)$ is constructed such that $T(x) \\equiv 0 \\pmod{g(x)}$:
-$$ T(x) = M(x)x^{2t} - (M(x)x^{2t} \\pmod{g(x)}) $$
-
-During decoding, if the received polynomial $R(x)$ contains errors, we calculate the syndromes:
-$$ S_i = R(\\alpha^i) \\quad \\text{for } i \\in [1, 2t] $$
-
-If all $S_i = 0$, the payload is intact. Otherwise, the error locator polynomial is solved via the Berlekamp-Massey algorithm, and the error magnitudes are computed using the Forney algorithm after finding roots with Chien search.
-
-\\end{document}`}
-                        </pre>
-                    </div>
-                </div>
-
                 <footer className="pt-8 pb-4 text-center">
                     <p className="text-sm text-gray-500 font-medium">by YSPSW</p>
                 </footer>
