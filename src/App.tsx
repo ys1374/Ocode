@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { generateOcodeData, decodeOcodeImageData, EccLevel, ECC_RATIOS } from './lib/ocode';
 
 export default function App() {
-    const [payload, setPayload] = useState('https://github.com/yasin/ocode');
+    const [payload, setPayload] = useState('https://github.com/ys1374/Ocode');
     const [eccLevel, setEccLevel] = useState<EccLevel>('M');
     const [svgData, setSvgData] = useState<{ svg: string; totalSize: number } | null>(null);
     const [scanStatus, setScanStatus] = useState<{ text: string, type: 'info' | 'success' | 'error' | 'warning' } | null>(null);
