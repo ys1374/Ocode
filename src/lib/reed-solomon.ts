@@ -75,6 +75,8 @@ export const RS = {
                 }
             }
         }
+        
+        if (errPos.length !== L) throw new Error("Uncorrectable");
 
         let omega = this.polyMul(syn, sigma).slice(0, eccLen);
         let sigmaDeriv = new Uint8Array(sigma.length - 1);

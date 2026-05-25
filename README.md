@@ -20,31 +20,6 @@ Ocode is an open-source, continuous data arc generator and scanner. It uses pure
 
 If you are writing an academic paper or technical document, you can use the following LaTeX to describe the Reed-Solomon error correction used by Ocode:
 
-```latex
-\documentclass{article}
-\usepackage{amsmath}
-
-\begin{document}
-
-\section*{Ocode Error Correction Algorithm}
-
-Ocode relies on systematic block coding over Galois Field $GF(2^8)$. Let the message polynomial of length $k$ be:
-$$ M(x) = m_{k-1}x^{k-1} + m_{k-2}x^{k-2} + \dots + m_0 $$
-
-We compute the generator polynomial $g(x)$ of degree $2t$ (where $t$ is the error capacity):
-$$ g(x) = \prod_{i=1}^{2t} (x - \alpha^i) $$
-
-The transmission polynomial $T(x)$ is constructed such that $T(x) \equiv 0 \pmod{g(x)}$:
-$$ T(x) = M(x)x^{2t} - (M(x)x^{2t} \pmod{g(x)}) $$
-
-During decoding, if the received polynomial $R(x)$ contains errors, we calculate the syndromes:
-$$ S_i = R(\alpha^i) \quad \text{for } i \in [1, 2t] $$
-
-If all $S_i = 0$, the payload is intact. Otherwise, the error locator polynomial is solved via the Berlekamp-Massey algorithm, and the error magnitudes are computed using the Forney algorithm after finding roots with Chien search.
-
-\end{document}
-```
-
 ## Getting Started
 
 1. Clone the repository.

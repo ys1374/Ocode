@@ -208,7 +208,7 @@ export default function App() {
             <div className="max-w-7xl mx-auto space-y-8">
                 <header className="flex items-center justify-between border-b border-gray-200 pb-6">
                     <div>
-                        <h1 className="text-2xl font-bold tracking-tight text-gray-900">Ocode - 2D Cricular data encription</h1>
+                        <h1 className="text-2xl font-bold tracking-tight text-gray-900">Ocode - 2D Circular data encryption & decryption</h1>
                         <p className="text-sm text-gray-500 mt-1">Open-source continuous data arc generator and scanner</p>
                     </div>
                 </header>
@@ -239,7 +239,7 @@ export default function App() {
                                         className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         rows={3}
                                         value={payload}
-                                        maxLength={100}
+                                        maxLength={85}
                                         onChange={(e) => setPayload(e.target.value)}
                                         placeholder="Enter text or URL to encode..."
                                     />
