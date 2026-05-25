@@ -172,28 +172,32 @@ export function decodeOcodeImageData(source: HTMLImageElement | HTMLVideoElement
     let searchRadius = Math.min(canvas.width, canvas.height) / 2.5;
 
     // Iterative center refinement using the bullseye
-    for (let iter = 0; iter < 4; iter++) {
-        let sumX = 0, sumY = 0, count = 0;
-        for (let y = 0; y < canvas.height; y += 4) {
-            for (let x = 0; x < canvas.width; x += 4) {
-                const dx = x - cx;
-                const dy = y - cy;
-                if (dx*dx + dy*dy < searchRadius*searchRadius) {
-                    const i = (y * canvas.width + x) * 4;
-                    const bright = 0.299 * imgData.data[i] + 0.587 * imgData.data[i+1] + 0.114 * imgData.data[i+2];
-                    if (bright < 128) {
-                        sumX += x;
-                        sumY += y;
-                        count++;
+    // Skip for uploaded images because they are perfectly centered already, 
+    // and asymmetric data arcs can pull the centroid off-center.
+    if (!(source instanceof HTMLImageElement)) {
+        for (let iter = 0; iter < 4; iter++) {
+            let sumX = 0, sumY = 0, count = 0;
+            for (let y = 0; y < canvas.height; y += 4) {
+                for (let x = 0; x < canvas.width; x += 4) {
+                    const dx = x - cx;
+                    const dy = y - cy;
+                    if (dx*dx + dy*dy < searchRadius*searchRadius) {
+                        const i = (y * canvas.width + x) * 4;
+                        const bright = 0.299 * imgData.data[i] + 0.587 * imgData.data[i+1] + 0.114 * imgData.data[i+2];
+                        if (bright < 128) {
+                            sumX += x;
+                            sumY += y;
+                            count++;
+                        }
                     }
                 }
             }
+            if (count > 0) {
+                cx = sumX / count;
+                cy = sumY / count;
+            }
+            searchRadius *= 0.6; // tighten search to lock onto the central black dot
         }
-        if (count > 0) {
-            cx = sumX / count;
-            cy = sumY / count;
-        }
-        searchRadius *= 0.6; // tighten search to lock onto the central black dot
     }
 
     // Radial histogram of dark pixels to find rings
