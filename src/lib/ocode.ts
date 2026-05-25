@@ -3,10 +3,10 @@ import { RS } from './reed-solomon';
 export type EccLevel = 'L' | 'M' | 'Q' | 'H';
 
 export const ECC_RATIOS = {
-    'L': 0.05,
-    'M': 0.10,
-    'Q': 0.20,
-    'H': 0.25
+    'L': 0.14, // 7% capacity
+    'M': 0.30, // 15% capacity
+    'Q': 0.50, // 25% capacity
+    'H': 0.60  // 30% capacity
 };
 
 export function polarToCartesian(cx: number, cy: number, r: number, angle: number) {

@@ -251,11 +251,10 @@ export default function App() {
                                         value={eccLevel}
                                         onChange={(e) => setEccLevel(e.target.value as EccLevel)}
                                     >
-                                        {Object.entries(ECC_RATIOS).map(([key, value]) => (
-                                            <option key={key} value={key}>
-                                                Level {key} (~{Math.round(value * 100)}%)
-                                            </option>
-                                        ))}
+                                        <option value="L">Level L (~7% restoration)</option>
+                                        <option value="M">Level M (~15% restoration)</option>
+                                        <option value="Q">Level Q (~25% restoration)</option>
+                                        <option value="H">Level H (~30% restoration)</option>
                                     </select>
                                 </div>
                             </div>
@@ -265,7 +264,7 @@ export default function App() {
                     {/* DECODER PANEL */}
                     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
                         <div className="px-6 py-4 border-b border-gray-100 bg-gray-50 flex flex-wrap gap-3 items-center justify-between">
-                            <h2 className="font-semibold text-gray-800">Scanner</h2>
+                            <h2 className="font-semibold text-gray-800">Decoded</h2>
                             <div className="flex gap-2">
                                 {isScanning ? (
                                     <button 
