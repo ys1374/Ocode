@@ -14,6 +14,11 @@
 
 </div>
 
+<div align="center">
+  <img src="src/ocode_en.png" alt="Ocode Encode Example" width="48%" />
+  <img src="pic/ocode_de.png" alt="Ocode Decode Example" width="48%" />
+</div>
+
 ---
 
 ## What is Ocode?
