@@ -311,7 +311,7 @@ P(x) = M(x) · xᵗ  mod  g(x),    g(x) = ∏(x − αⁱ),  i = 0..t-1
 
 **Decoding** pipeline: syndromes → Berlekamp-Massey (error locator) → Chien search (error positions) → Forney's algorithm (error magnitudes) → correction by XOR.
 
-For the full mathematical derivation see the [LaTeX technical document](ocode_explanation.tex) in the repository.
+For the full mathematical derivation see the [LaTeX technical document](Ocode_whitepaper.pdf) in the repository.
 
 ---
 
