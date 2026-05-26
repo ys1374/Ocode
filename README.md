@@ -10,12 +10,12 @@
 
 **An open-source circular 2D barcode — data encoded in flowing arcs, not a pixel grid.**
 
-[**→ Try it live**](https://ys1374.github.io/Ocode/) · [**→ White Paper**](https://ys1374.github.io/Ocode/Ocode_whitepaper.pdf) · [Report a bug](https://github.com/ys1374/Ocode/issues) · [Suggest a feature](https://github.com/ys1374/Ocode/issues)
+[**→ Try it live**](https://ys1374.github.io/Ocode/) · [**→ White Paper**](https://github.com/ys1374/Ocode/blob/main/Ocode_whitepaper.pdf) · [Report a bug](https://github.com/ys1374/Ocode/issues) · [Suggest a feature](https://github.com/ys1374/Ocode/issues)
 
 </div>
 
 <div align="center">
-  <img src="src/ocode_en.png" alt="Ocode Encode Example" width="48%" />
+  <img src="pic/ocode_en.png" alt="Ocode Encode Example" width="48%" />
   <img src="pic/ocode_de.png" alt="Ocode Decode Example" width="48%" />
 </div>
 
